@@ -1,3 +1,5 @@
-tdk-bankrobbery/tdk-bankrobbery.mp4
-.gitignore~
+.*mp4
+.*~
 .DS_Store
+tdk-bankrobbery/frames
+.*.ipynb_checkpoints/
