@@ -31,6 +31,8 @@ def split_video(filename, path = 'data', ext = '.jpg'):
     while(True):
         # Capture frame-by-frame
         ret, frame = cap.read()
+        
+        if not ret: break
     
         name = f'./{path}/frame{str(currentFrame)}{ext}'
         print ('Creating...' + name)
