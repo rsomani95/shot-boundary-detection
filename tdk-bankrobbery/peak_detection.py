@@ -2,6 +2,7 @@
 
 from __future__ import division, print_function
 import numpy as np
+import matplotlib.pyplot as plt
 
 __author__  = "Marcos Duarte, https://github.com/demotu/BMC"
 __version__ = "1.0.4"
