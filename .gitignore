@@ -1,6 +1,6 @@
 *.mp4
 *~
 .DS_Store
-tdk-bankrobbery/frames
+tdk_bankrobbery/frames
 *.ipynb_checkpoints/
 *__pycache__/
