@@ -142,10 +142,10 @@ def detect_peaks(x, mph=None, mpd=1, threshold=0, edge='rising',
 
     return ind
 
-def _plot(x, mph, mpd, threshold, edge, valley, ax, ind):
+def _plot(x, mph, mpd, threshold, edge, valley, ax, ind, xlab='Frame #', ylab='Avg. Δ HSL'):
     """Plot results of the detect_peaks function, see its help."""
     if ax is None:
-        _, ax = plt.subplots(1, 1, figsize=(16, 8))
+        _, ax = plt.subplots(1, 1, figsize=(10, 6))
 
     ax.plot(x, 'b', lw=1)
     if ind.size:
@@ -158,10 +158,11 @@ def _plot(x, mph, mpd, threshold, edge, valley, ax, ind):
     ymin, ymax = x[np.isfinite(x)].min(), x[np.isfinite(x)].max()
     yrange = ymax - ymin if ymax > ymin else 1
     ax.set_ylim(ymin - 0.1*yrange, ymax + 0.1*yrange)
-    ax.set_xlabel('Time (Sample Index)')
-    ax.set_ylabel('Amplitude')
+    ax.set_xlabel(xlab)
+    ax.set_ylabel(ylab)
     mode = 'Valley Detection' if valley else 'Peak Detection'
-    ax.set_title("%s (mph=%s, mpd=%d, threshold=%s, edge='%s')"
-                 % (mode, str(mph), mpd, str(threshold), edge))
+    #ax.set_title("%s (mph=%s, mpd=%d, threshold=%s, edge='%s')"
+    #             % (mode, str(mph), mpd, str(threshold), edge))
+    ax.set_title(f'Peak Detection with Avg. Δ HSL Across Frames; threshold={threshold:.02f}')
     # plt.grid()
     plt.show()
