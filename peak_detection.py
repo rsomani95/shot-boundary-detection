@@ -166,3 +166,4 @@ def _plot(x, mph, mpd, threshold, edge, valley, ax, ind, xlab='Frame #', ylab='A
     ax.set_title(f'Peak Detection with Avg. Δ HSL Across Frames; threshold={threshold:.02f}')
     # plt.grid()
     plt.show()
+    plt.tight_layout()
